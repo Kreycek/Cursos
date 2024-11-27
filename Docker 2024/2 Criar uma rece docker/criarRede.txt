@@ -1,0 +1,16 @@
+1) Digitar docker network create nomeDaRede
+    1.1) Para listar digitar docker network ls
+    1.2) para verificar as propriedades da nova rede digitar docker network inspect idDaNovaRede obtido no item 1.1 ou digitar docker inspect 
+           idDaNovaRede depois digitar 'ip a' e procurar a nova rede.
+    1.3) Para mudar o container de rede digitar docker network connect nomeDaRede idDoConainer
+    1.4) Se você digitar docker inspect nome do container irá ver que agora o container estará com o Ip da nova rede
+    1.5) Se você digitar curl e o novo Ip verá que vai funcionar, use a imagem do nginx
+    1.6) Para disconectar um container digitar -> docker network disconnect nomeDaRede IdDoContainer
+    1.7) Para mudar o container de rede e já definir um alias digitar docker network connect --alias=nomeDoAlias nomeDaRede idDoConainer
+    1.8) Já subir e inserir o container em determinada rede  docker run --network demo -dit alpine sh
+    1.9) Para criar uma subrede já com conceitos de rede -> docker network create --attachable --driver bridge --subnet 10.53.0.0/24 --gateway 10.53.0.1 --ip-range 10.53.0.0/28 --internal internal-demo
+          1.9.1) attachable indica que pode associar container
+          1.9.2) internal  indica que é apenas interna
+     2.0) Para executar o que foi criado no passo 1.9 digitar docker run -d --network internal-demo nginx
+     2.1) Entrar no container do alpine com o comando docker exec -ti idContainer sh e digitar nc -v idContainer 80 para se conectar na porta 80 e você verá irá conectar pois estão na mesma bridge
+     2.2) Para subir um container e já definir um IP digitar docker run --network nomeDaRede --ip 10.53.0.10 -it nomeDaImagem sh

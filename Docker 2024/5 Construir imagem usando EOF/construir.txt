@@ -1,0 +1,5 @@
+
+docker build -t nginx:stdin - <<EOF
+FROM nginx
+RUN apt update
+EOF

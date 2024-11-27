@@ -1,0 +1,11 @@
+1) Restart Polices
+
+     docker run --restart on-failure -d img:123 ->reinicia se tiver uma falha
+     docker run --restart always -d img:123  ->sempre reinicia
+     docker run --restart unless-stopped -d img:123 -> se parar reiniciar
+     docker update --restart no idDoContainer assim para de reinicar com os comando acima
+
+2) Docker Events
+
+     docker system events
+     docker system events --filter palavraASerLocalizada

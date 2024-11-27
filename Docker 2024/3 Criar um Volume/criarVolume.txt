@@ -1,0 +1,20 @@
+    1.0) Para listar um volume digitar docker volume ls | grep 'id ou nome'
+    2.0) Para criar um volume digitar docker volume create
+    2.1) Para criar um volume com nome digitar docker volume create 'nomeVolume'
+    2.2) Para remover um volume digitar docker volume rm 'nomeVolume'
+    2.3) Para criar um volume e com isso gravar os dados do container no host, digitar o que está escrito no item 2.3.1
+      2.3.1) docker run -it --name alpine -w /app --mount type=bind,source=$(pwd)/target,target=/app alpine sh
+                 --mount type=bind tipo bint
+                               source= pasta atual diretorio target criado anteriormente nessa pasta 
+                               target=/app tudo que for inserido ou alterado nessa pasta passa para a pasta target
+      2.3.2) se quiser uma forma mais fácil de montar o container pode digitar o item 2.3.2.1
+          2.3.2.1)  docker run -it --name alpine -w /app -v /tmp/target:/app alpine sh
+     2.4) Depois de baixar amazon/aws-cli digitar  'docker run --entrypoint "" -it amazon/aws-cli sh'
+-    2.5) Para montar um volume direto fazer o seguinte docker run -d -v nomeDoVolume:pastaDentroDoLinux nomeImagem
+
+CRIAR E INSTALAR UMA IMAGEM /***************************************************************/
+
+    1.0) docker run -v $(pwd):/app  -w /app -it nomeImage sh
+            Obs: caso de erro colocar entre aspas o comando $(pwd) pois pode ter espaço no 
+            caminho do diretório.
+     1.1) o -v $(pwd):/app indica que pega o diretório atual e jogar dentro de app na image, e o -w /app criar o diretório dentro da imagem

@@ -1,0 +1,14 @@
+
+1) Entrar em dockerhub.com e criar um repositorio
+2) Voltar ao prompt do docker e digitar docker login e digitar as credenciais
+3) Para criar uma tag digitar -> docker tag nomeImagem:tagDaImagem nomeRepositorioDockerHub:NomeDaTagNova
+4) Para ver as tags criadas no comando acima digitar -> docker images nomeRepositorioDockerHub
+5) Para enviar a imagem para o docker hub digitar docker push nomeRepositorioDockerHub:NomeDaTag
+6) Para baixar a imagem digitar o comando ->  docker image pull nomeRepositorio:NomeDaTag
+7) A imagem mantem sempre o mesmo ID isso que é bom
+8) Para ver como uma imagem foi gerada digitar -> docker image history NomeDiretorioDockerHub:1NomeDaTag
+9) Para ver como uma imagem foi gerada de forma mais amigavel digitar -> docker image history nomeImagem --no-trunc | gedit -
+10) para converter uma imagem em .tar digitar-> docker image save nomeImagem:tagImagem -o nomeImagemTar.tar
+11) para listar digitar -> ls -lh
+12) Para descompactar digitar -> tar xvf nomeImagemTar.tar
+13) Linux ocmando ll atalho para ls-l

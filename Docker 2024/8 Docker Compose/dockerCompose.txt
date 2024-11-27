@@ -1,0 +1,11 @@
+sudo apt-get install docker-compose-plugin
+
+    1) Exemplo de docker compose
+        version: '3.8'
+
+services:
+  frontend:
+    container_name: frontend
+    image: nginx
+    ports:
+      - "8084:80"
