@@ -1,0 +1,61 @@
+Para ver o usuário atual
+    whoami
+
+Para ver todos os serviços ativos no linux
+     $ sudo service --status-all 
+
+Para parar todos os containers de uma vez
+ docker stop `docker ps -q`
+
+Para remover uma imagem
+     docker rmi -f nodericormg
+
+Para startar o docker no linux
+     $ sudo service docker start
+
+Executar um container
+     docker run nomeImagem --Esse comando fica travado na tela
+     docker run -d nomeimagem  -> Roda a mesma em backgroup sem travar a tela
+     Para ver os comando do docker run digitar-> docker run --help
+
+Para parar todos os containers de uma vez digitar 
+     para trazer os os ids de container que estão rodando digitar docker ps -q
+     para parar todos de uma vez digitar docker stop `docker ps -q`
+
+
+Procurar filtrar images por nome
+    docker images | grep nomeBusca
+
+Para para a execução de um container 
+    docker stop idcontainer
+
+Listar os container em execução
+    docker ps  ou docker container ls
+
+Listar todos os IP e a quem está atrelado
+    ip a
+
+Para ver os processos do container 
+     docker container top idContainer
+
+Para ver estatisticas como uso de memória, uso de processador
+     docker container stats idContainer
+
+Para entrar em um container
+    docker exec idContainer -ti [comando] ex: ls caso não tenha o comando digitar /bin/bash ou /bin/sh
+
+Para ajudar digitar docker --help
+
+Para stopar um container digitar
+docker stop idContainer
+
+Para despausar um container digitar
+docker unpause idContainer 
+
+Para remover um container 
+  1) digitar docker ps -a
+  2) docker rm idContainer 
+  3) ou rodar esse para forçar docker rm -f idContainer
+
+Limpar todos os container
+   docker container prune 
