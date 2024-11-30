@@ -9,3 +9,5 @@ services:
     image: nginx
     ports:
       - "8084:80"
+
+      # para roder esse docker compose digitar 'docker-compose  up -d'
