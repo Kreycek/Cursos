@@ -1,0 +1,29 @@
+LABEL maintainer="teste"
+
+#adiciona um usuario e cria uma pasta para o mesmo
+RUN  adduser -h /var/rico -s /bin/bash -D rico && apk add curl
+
+WORKDIR /var/rico
+
+COPY app.js .
+
+#verifica se uma determinada URL está retorna o status correto
+HEALTHCHECK CMD curl -sf localhost:5001 || exit
+
+#  Já cria um volume, isso por exemplo na AWS segundo o professor pode evitar problemas de criação,
+#   porém nesse caso ele criar como root
+VOLUME ['/var/rico']
+
+#Da permissão para o arquivo com o usário rico
+RUN chown rico:rico app.js
+
+EXPOSE 8080
+
+#Abaixo na linha de comando iremos passar o VERSION
+ARG VERSION
+
+ENV VERSION=${VERSION:-1.0.0}
+
+USER rico
+
+CMD [ "node" , "app.js"]

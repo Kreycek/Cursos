@@ -15,7 +15,7 @@ CMD [ "node" , "app.js"]
 #Para executar o arquivo acima digitar -> docker build -t nomeDesejado .   //O ponto indica o diretório atual
 
 #Para já setar uma variável de ambiente usar docker run -e PORT=5000 nomeDaImagem por exemplo no Nodejs onde tem process.env.PORT 
-  irá pegar essa porta
+  #irá pegar essa porta
 
  ARG VERSION
  #O que foi passado acima como parametro a variável VERSION é passada para o comando abaixo dentro das chaves.
