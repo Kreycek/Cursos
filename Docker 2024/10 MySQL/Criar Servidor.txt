@@ -1,0 +1,8 @@
+1) Para criar um container e executa-lo digitar o comando do item 1.1
+  1.1) docker run -d --name mysql_container --network mysqlNetWork -h kreycek -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 mysql
+
+2) Acessar de dentro do container digitar o comando do item 2.1
+  2.1) docker exec -it mysql_container mysql -u root -p
+
+3) Conectar-se ao MySQL de Fora do Container por exemplo de um mysql de outro lugar tipo de dentro de uma aplicação usar o comando do item 3.1
+  3.1) mysql -h 127.0.0.1 -P 3306 -u root -p
