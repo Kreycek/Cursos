@@ -1,0 +1,28 @@
+
+    1)  Caso de erro no wsl
+    
+    Abra o Prompt de Comando como administrador e execute:
+
+            cmd
+            Copy code
+            bcdedit
+            Verifique se há a entrada:
+
+            rust
+            Copy code
+            hypervisorlaunchtype    Auto
+            Se não aparecer, habilite manualmente o hypervisor:
+
+            cmd
+            Copy code
+            bcdedit /set hypervisorlaunchtype auto
+
+    2) Erro de E: Unable to locate package vagrant
+        
+        2.1) curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+
+3) Ative o Vagrant no ubuntu para acessar o windows
+        3.1) Coloque a chave no final do arquivo a chave export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+
