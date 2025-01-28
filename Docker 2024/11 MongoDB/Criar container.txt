@@ -3,5 +3,5 @@
 2) Subir o container com a nova rede
   2.2)  No item 2.2.2 colocar o some-mongo na rede criada no passo 1.1  e executar
     2.2.1)  para colocar o some-mongo na rede mongodb digitar  'docker network connect mongodb some-mongo'
-    2.2.1) docker run -it --network some-network --rm mongo mongosh --host some-mongo test
+    2.2.2) docker run -it --network some-network --rm mongo mongosh --host some-mongo test
   
